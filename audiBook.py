@@ -22,6 +22,12 @@ else:
 
     for page_num in range(pdfReader.numPages):
         text = pdfReader.getPage(page_num).extractText()
+        
+        voices = speaker.getProperty('voices')
+        speaker.setProperty('voice',voices[2].id)
+        speaker.setProperty('rate',125)
+        speaker.setProperty('volume',5.0) 
+        
         speaker.say(text)
         speaker.runAndWait()
     speaker.stop()
