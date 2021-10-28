@@ -33,4 +33,3 @@ else:
     speaker.stop()
     if int(createAudio) == 1:
         speaker.save_to_file(text, 'audio.mp3')
-    speaker.runAndWait()
